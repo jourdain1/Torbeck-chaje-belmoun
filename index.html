@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ht">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Torbeck Chaje Bel Moun</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f4f7fb;color:#17243a}
+header{background:#0756a5;color:white;padding:25px 15px;text-align:center}
+header h1{font-size:28px;margin:8px}
+header p{margin:8px}
+nav{background:#07366c;padding:14px;text-align:center}
+nav a{color:white;text-decoration:none;margin:8px;font-weight:bold}
+.hero{background:linear-gradient(120deg,#0756a5,#1595cf);color:white;text-align:center;padding:65px 20px}
+.hero h2{font-size:32px}
+.btn{display:inline-block;background:#e72e42;color:white;padding:13px 22px;border-radius:7px;text-decoration:none;border:0;cursor:pointer;font-weight:bold}
+section{padding:30px 18px;max-width:1000px;margin:auto}
+h2{text-align:center;color:#0756a5}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.card{background:white;padding:20px;border-radius:12px;box-shadow:0 2px 12px #0001}
+.card h3{color:#0756a5}
+.card button{margin:5px 3px}
+input,textarea{width:100%;padding:12px;margin:8px 0;border:1px solid #ccd4df;border-radius:7px}
+footer{background:#07366c;color:white;text-align:center;padding:25px}
+</style>
+</head>
+<body>
+
+<header>
+<h1>🇭🇹 TORBECK CHAJE BEL MOUN</h1>
+<p>Kilti • Eritaj • Bèl Bagay • Kominote</p>
+</header>
+
+<nav>
+<a href="#akeyi">Akèy</a>
+<a href="#kilti">Kilti</a>
+<a href="#dekouvri">Dekouvri</a>
+<a href="#galri">Galri</a>
+<a href="#don">Donasyon</a>
+</nav>
+
+<div class="hero" id="akeyi">
+<h2>Byenveni nan Torbeck!</h2>
+<p>Ann fè konnen bèl bagay, kilti ak richès komin nou an ak komin vwazen yo.</p>
+<a href="#dekouvri" class="btn">Dekouvri komin nou</a>
+</div>
+
+<section id="kilti">
+<h2>Kilti ak Eritaj nou</h2>
+<div class="cards">
+<div class="card"><h3>🏛️ Istwa</h3><p>Ann prezève istwa ak eritaj Torbeck.</p></div>
+<div class="card"><h3>🎭 Tradisyon</h3><p>Ann fè konnen koutim ak tradisyon nou.</p></div>
+<div class="card"><h3>🍲 Gastronomi</h3><p>Ann dekouvri manje ak gou lakay nou.</p></div>
+</div>
+</section>
+
+<section id="dekouvri">
+<h2>Dekouvri bèl bagay nan komin nou</h2>
+<p>Yon espas pou prezante bèl peyizaj, moun, talan, aktivite ak bèl kote nan Torbeck ak zòn vwazen yo.</p>
+</section>
+
+<section id="galri">
+<h2>Foto ak Videyo</h2>
+<div class="card">
+<p>📸 Foto ak videyo kominote a ap parèt isit la.</p>
+<p>Kontni sa yo ap pibliye pa administratè sit la.</p>
+</div>
+</section>
+
+<section>
+<h2>Dènye Piblikasyon</h2>
+<div class="card">
+<h3>Byenveni sou platfòm nou an!</h3>
+<p>Yon nouvo espas pou pataje bèl bagay nan komin Torbeck ak komin vwazen yo.</p>
+<button class="btn" onclick="like()">❤️ Like (<span id="likes">0</span>)</button>
+<h3>Kòmante</h3>
+<textarea id="comment" placeholder="Ekri kòmantè ou..."></textarea>
+<button class="btn" onclick="comment()">Voye kòmantè</button>
+<div id="comments"></div>
+</div>
+</section>
+
+<section id="don">
+<h2>❤️ Sipòte Torbeck Chaje Bel Moun</h2>
+<div class="card">
+<p>Chak kontribisyon ede nou fè kilti, eritaj ak bèl bagay komin nou an konnen.</p>
+<p>MonCash • Zelle • Visa • Mastercard</p>
+<button class="btn" onclick="alert('Enfòmasyon donasyon yo ap disponib byento.')">Fè yon donasyon</button>
+</div>
+</section>
+
+<footer>
+<h3>TORBECK CHAJE BEL MOUN 🇭🇹</h3>
+<p>Ann fè komin nou briye!</p>
+<p>© 2026 - Tout dwa rezève</p>
+</footer>
+
+<script>
+let likes=0;
+function like(){
+likes++;
+document.getElementById('likes').textContent=likes;
+}
+function comment(){
+let input=document.getElementById('comment');
+if(!input.value.trim())return;
+let p=document.createElement('p');
+p.textContent="💬 "+input.value;
+document.getElementById('comments').appendChild(p);
+input.value="";
+}
+</script>
+</body>
+</html>
